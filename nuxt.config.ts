@@ -14,21 +14,19 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
+  colorMode: {
+    classSuffix: '',
+  },
   modules: [
-    '@vueuse/nuxt',
     '@nuxt/test-utils/module',
+    '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+    'nuxt-icon',
     'shadcn-nuxt',
   ],
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: 'SC',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: './components/ui',
   },
   vite: {
