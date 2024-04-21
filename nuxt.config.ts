@@ -14,14 +14,23 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
-  css: [
-    '@unocss/reset/tailwind.css',
-  ],
   modules: [
-    '@unocss/nuxt',
     '@vueuse/nuxt',
     '@nuxt/test-utils/module',
+    '@nuxtjs/tailwindcss',
+    'shadcn-nuxt',
   ],
+  shadcn: {
+    /**
+     * Prefix for all the imported component
+     */
+    prefix: 'SC',
+    /**
+     * Directory that the component lives in.
+     * @default "./components/ui"
+     */
+    componentDir: './components/ui',
+  },
   vite: {
     css: {
       preprocessorOptions: {

@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <DuckWelcome />
+    <div>asd</div>
   </div>
 </template>
 
