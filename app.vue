@@ -1,5 +1,6 @@
 <template>
-  <div class="app">
+  <div class="app bg-background">
+    <TheNavbar />
     <div>asd</div>
   </div>
 </template>
