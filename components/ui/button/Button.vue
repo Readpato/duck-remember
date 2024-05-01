@@ -3,13 +3,11 @@ import type { HTMLAttributes } from 'vue'
 import { Primitive, type PrimitiveProps } from 'radix-vue'
 import { type ButtonVariants, buttonVariants } from '.'
 import { cn } from '@/lib/utils'
-import { NuxtLink } from '#components'
 
 interface Props extends PrimitiveProps {
-  as: 'button' | 'anchor'
-  class?: HTMLAttributes['class']
-  size?: ButtonVariants['size']
   variant?: ButtonVariants['variant']
+  size?: ButtonVariants['size']
+  class?: HTMLAttributes['class']
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,7 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <Primitive
-    :as="as === 'button' ? 'button' : NuxtLink"
+    :as="as"
     :as-child="asChild"
     :class="cn(buttonVariants({ variant, size }), props.class)"
   >
