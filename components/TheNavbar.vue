@@ -11,16 +11,13 @@ const handleColorChange = () => {
 </script>
 
 <template>
-  <header class="flex items-center justify-between p-4">
+  <header class="flex items-center justify-between border-b p-4">
     <h1 class="scroll-m-20 text-2xl font-semibold tracking-tight">
       Remember
     </h1>
     <div class="space-x-2">
-      <CtaIcon icon="logo-github" as="anchor" to="https://www.github.com" target="_blank" />
-      <CtaIcon
-        :icon="colorModeIcon"
-        @click="handleColorChange"
-      />
+      <CtaIcon icon="logo-github" as="anchor" to="https://www.github.com/readpato/duck-remember" target="_blank" />
+      <CtaIcon :icon="colorModeIcon" @click="handleColorChange" />
     </div>
   </header>
 </template>
