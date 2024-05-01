@@ -16,7 +16,7 @@ const handleColorChange = () => {
       Remember
     </h1>
     <div class="space-x-2">
-      <CtaIcon icon="logo-github" as="anchor" to="https://www.github.com/readpato/duck-remember" target="_blank" />
+      <CtaIcon is-anchor as-child icon="logo-github" target="_blank" to="https://www.github.com/readpato/duck-remember" />
       <CtaIcon :icon="colorModeIcon" @click="handleColorChange" />
     </div>
   </header>
