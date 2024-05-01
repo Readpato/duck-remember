@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils'
 import { NuxtLink } from '#components'
 
 interface Props extends PrimitiveProps {
-  variant?: ButtonVariants['variant']
-  size?: ButtonVariants['size']
-  class?: HTMLAttributes['class']
   as: 'button' | 'anchor'
+  class?: HTMLAttributes['class']
+  size?: ButtonVariants['size']
+  variant?: ButtonVariants['variant']
 }
 
 const props = withDefaults(defineProps<Props>(), {
