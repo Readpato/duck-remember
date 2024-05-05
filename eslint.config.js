@@ -13,7 +13,7 @@ export default await antfu({
   ],
   settings: {
     tailwindcss: {
-      whitelist: ['app'],
+      whitelist: ['app', 'content'],
     },
   },
 }))
