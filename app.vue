@@ -8,7 +8,7 @@ const { height } = useElementBounding(navbarEl)
     <TheNavbar ref="navbarEl" />
     <div class="content flex">
       <TheSidebar :offset-height="height" />
-      <main>main</main>
+      <NuxtPage class="h-full overflow-y-auto" />
     </div>
   </div>
 </template>
@@ -20,6 +20,6 @@ const { height } = useElementBounding(navbarEl)
 }
 
 .content {
-  height: v-bind('`calc(100dvh - ${height}px)`')
+  height: v-bind('`calc(100dvh - ${height}px)`');
 }
 </style>
