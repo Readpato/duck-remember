@@ -24,7 +24,14 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon',
     'shadcn-nuxt',
+    '@nuxtjs/supabase',
   ],
+  supabase: {
+    redirectOptions: {
+      login: '/login',
+      callback: '/',
+    },
+  },
   shadcn: {
     prefix: 'SC',
     componentDir: './components/ui',
