@@ -29,12 +29,17 @@ export default defineNuxtConfig({
   supabase: {
     redirectOptions: {
       login: '/login',
-      callback: '/',
+      callback: '/confirm',
     },
   },
   shadcn: {
     prefix: 'SC',
     componentDir: './components/ui',
+  },
+  runtimeConfig: {
+    public: {
+      baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    },
   },
   vite: {
     css: {
