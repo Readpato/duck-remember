@@ -1,4 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import process from 'node:process'
 
 const sassAdditionalData = () => {
   let additionalData = '@use "sass:math";'
@@ -10,7 +11,7 @@ const sassAdditionalData = () => {
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Duck nuxt starter',
+      title: 'Duck Remember',
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
@@ -20,11 +21,11 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/test-utils/module',
     '@nuxtjs/color-mode',
+    '@nuxtjs/supabase',
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     'nuxt-icon',
     'shadcn-nuxt',
-    '@nuxtjs/supabase',
   ],
   supabase: {
     redirectOptions: {
