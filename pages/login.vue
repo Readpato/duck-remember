@@ -5,6 +5,13 @@ definePageMeta({
 
 const config = useRuntimeConfig()
 const supabase = useSupabaseClient()
+const hasSentOTPToken = ref(false)
+const userEmail = ref('')
+
+const handleTokenSent = (email: string) => {
+  userEmail.value = email
+  hasSentOTPToken.value = true
+}
 
 const signInWithOAuth = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
@@ -13,35 +20,32 @@ const signInWithOAuth = async () => {
       redirectTo: `${config.public.baseUrl}/confirm`,
     },
   })
-  if (error)
+  if (error) {
+    // TODO: Create a NuxtError page
     console.log(error)
+  }
 }
 </script>
 
 <template>
-  <div class="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
-    <div class="flex flex-col space-y-2 text-center">
+  <div class="mx-auto flex w-full flex-col justify-center sm:w-[350px]">
+    <div class="mb-4 flex flex-col text-center">
       <h1 class="text-2xl font-semibold tracking-tight">
-        Login with
+        Login
       </h1>
     </div>
+    <FormLoginWithEmail v-if="!hasSentOTPToken" @token-sent="handleTokenSent" />
+    <FormVerifyToken v-else :user-email="userEmail" />
+    <div class="relative my-4">
+      <div class="absolute inset-0 flex items-center">
+        <span class="w-full border-t" />
+      </div>
+      <div class="relative flex justify-center text-xs uppercase">
+        <span class="bg-background px-2 text-muted-foreground">
+          Or continue with
+        </span>
+      </div>
+    </div>
     <CtaIcon icon="logo-google" class="mx-auto" @click="signInWithOAuth" />
-    <p class="px-8 text-center text-sm text-muted-foreground">
-      By clicking continue, you agree to our
-      <a
-        href="/terms"
-        class="underline underline-offset-4 hover:text-primary"
-      >
-        Terms of Service
-      </a>
-      and
-      <a
-        href="/privacy"
-        class="underline underline-offset-4 hover:text-primary"
-      >
-        Privacy Policy
-      </a>
-      .
-    </p>
   </div>
 </template>
