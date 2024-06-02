@@ -2,11 +2,13 @@
 import { toTypedSchema } from '@vee-validate/zod'
 import * as z from 'zod'
 import { useForm } from 'vee-validate'
+import { toast } from 'vue-sonner'
 
 const props = defineProps<{
   userEmail: string
 }>()
 
+const isVerifying = ref(false)
 const supabase = useSupabaseClient()
 
 const formSchema = toTypedSchema(z.object({
@@ -18,20 +20,22 @@ const { handleSubmit } = useForm({
 })
 
 const onSubmit = handleSubmit(async (values) => {
-  // TODO: add loading status when awaiting for the response
+  isVerifying.value = true
   const { data: { session }, error } = await supabase.auth.verifyOtp({
     email: props.userEmail,
     token: values.token,
     type: 'email',
   })
 
-  console.log('session', session, 'session: acceess token', session?.access_token)
-  if (session && session.access_token)
-    navigateTo('/')
+  if (session && session.access_token) {
+    isVerifying.value = false
+    return navigateTo('/')
+  }
 
   if (error) {
-    // TODO: Create a NuxtError page
-    console.log(error)
+    toast.error('Error verifying token', {
+      description: error.message,
+    })
   }
 })
 </script>
@@ -45,7 +49,8 @@ const onSubmit = handleSubmit(async (values) => {
       </SCFormItem>
     </SCFormField>
     <SCButton class="w-full" type="submit">
-      Confirm token
+      <span v-if="!isVerifying">Confirm token</span>
+      <span v-else>Verifying token...</span>
     </SCButton>
   </form>
 </template>

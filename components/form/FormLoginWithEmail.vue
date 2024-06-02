@@ -8,9 +8,9 @@ const emit = defineEmits<{
   tokenSent: [email: string]
 }>()
 
-const isSubmitting = ref(false)
-
 const supabase = useSupabaseClient()
+
+const isSubmitting = ref(false)
 
 const formSchema = toTypedSchema(z.object({
   email: z.string().email(),
@@ -33,8 +33,12 @@ const onSubmit = handleSubmit(async (values) => {
     emit('tokenSent', values.email)
   }
 
-  if (error)
-    console.log(error)
+  if (error) {
+    isSubmitting.value = false
+    toast.error('Error sending token', {
+      description: error.message,
+    })
+  }
 })
 </script>
 
