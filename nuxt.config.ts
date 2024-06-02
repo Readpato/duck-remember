@@ -11,7 +11,6 @@ const sassAdditionalData = () => {
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Duck Remember',
       link: [{ rel: 'icon', type: 'image/jpeg', href: '~public/favicon.ico' }],
     },
   },
