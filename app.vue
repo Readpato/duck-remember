@@ -2,5 +2,5 @@
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
-  <SCToaster />
+  <SCToaster rich-colors />
 </template>
