@@ -1,4 +1,8 @@
 <script setup lang="ts">
+useHead({
+  title: 'Redirecting',
+})
+
 definePageMeta({
   layout: 'unauthenticated',
 })
@@ -12,5 +16,9 @@ watch(user, () => {
 </script>
 
 <template>
-  <div>Waiting for login...</div>
+  <div class="flex items-center justify-center">
+    <h1 class="text-2xl font-semibold">
+      Redirecting...
+    </h1>
+  </div>
 </template>

@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Database, PostgrestError } from '~/types'
 
+useHead({
+  title: 'Write',
+})
+
 const supabase = useSupabaseClient<Database>()
 const entry = ref('')
 const hasError = ref<PostgrestError | null>(null)
