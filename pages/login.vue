@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { toast } from 'vue-sonner'
+
 definePageMeta({
   layout: 'unauthenticated',
+  middleware: ['auth'],
 })
 
 const config = useRuntimeConfig()
@@ -21,8 +24,9 @@ const signInWithOAuth = async () => {
     },
   })
   if (error) {
-    // TODO: Create a NuxtError page
-    console.log(error)
+    toast.error('Error signing with Google', {
+      description: error.message,
+    })
   }
 }
 </script>
