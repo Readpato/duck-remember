@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { toast } from 'vue-sonner'
+
 const supabase = useSupabaseClient()
 const colorMode = useColorMode()
-const hasError = ref()
 
 const colorModeIcon = computed(() => colorMode.preference === 'dark' ? 'sun' : 'moon')
 
@@ -14,10 +15,13 @@ const handleColorChange = () => {
 const handleSignOut = async () => {
   const { error } = await supabase.auth.signOut()
 
-  if (error)
-    hasError.value = error
+  if (error) {
+    toast.error('Error signing out', {
+      description: error.message,
+    })
+  }
 
-  navigateTo({ path: '/login' })
+  return navigateTo({ path: '/login' })
 }
 </script>
 
