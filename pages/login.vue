@@ -38,7 +38,7 @@ const signInWithOAuth = async () => {
 <template>
   <div class="mx-auto flex w-full flex-col justify-center sm:w-[350px]">
     <div class="mb-4 flex flex-col text-center">
-      <h1 class="tracking-light text-2xl font-semibold">
+      <h1 class="text-2xl font-semibold">
         Login
       </h1>
     </div>
