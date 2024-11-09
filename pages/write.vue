@@ -34,5 +34,6 @@ watch(hasError, (error) => {
         Submit
       </SCButton>
     </form>
+    <TipTapEditor />
   </main>
 </template>

@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-icon',
     'shadcn-nuxt',
+    'nuxt-tiptap-editor',
   ],
   supabase: {
     redirectOptions: {
@@ -41,6 +42,9 @@ export default defineNuxtConfig({
       baseUrl: process.env.BASE_URL || 'http://localhost:3000',
     },
   },
+  tiptap: {
+    prefix: 'TipTap',
+  },
   vite: {
     css: {
       preprocessorOptions: {
@@ -49,3 +53,4 @@ export default defineNuxtConfig({
     },
   },
 })
+
