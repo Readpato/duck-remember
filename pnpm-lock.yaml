@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@internationalized/date':
+        specifier: ^3.5.6
+        version: 3.5.6
       '@vee-validate/zod':
         specifier: ^4.12.8
         version: 4.12.8(vue@3.4.27(typescript@5.4.5))
@@ -20,6 +23,9 @@ importers:
       clsx:
         specifier: ^2.1.0
         version: 2.1.1
+      lucide-vue-next:
+        specifier: ^0.456.0
+        version: 0.456.0(vue@3.4.27(typescript@5.4.5))
       radix-vue:
         specifier: ^1.7.1
         version: 1.8.2(vue@3.4.27(typescript@5.4.5))
@@ -609,8 +615,8 @@ packages:
     peerDependencies:
       vue: '>=3'
 
-  '@internationalized/date@3.5.4':
-    resolution: {integrity: sha512-qoVJVro+O0rBaw+8HPjUB1iH8Ihf8oziEnqMnvhJUSuVIrHOuZ6eNLHNvzXJKUvAtaDiqMnRlg8Z2mgh09BlUw==}
+  '@internationalized/date@3.5.6':
+    resolution: {integrity: sha512-jLxQjefH9VI5P9UQuqB6qNKnvFt1Ky1TPIzHGsIlCi7sZZoMR8SdYbBGRvM0y+Jtb+ez4ieBzmiAUcpmPYpyOw==}
 
   '@internationalized/number@3.5.3':
     resolution: {integrity: sha512-rd1wA3ebzlp0Mehj5YTuTI50AQEx80gWFyHcQu+u91/5NgdwBecO8BH6ipPfE+lmQ9d63vpB3H9SHoIUiupllw==}
@@ -3568,6 +3574,11 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
+  lucide-vue-next@0.456.0:
+    resolution: {integrity: sha512-KSBfTFpJV75GAUk5dfxWH4U4eJ0DpSeEZ7hMHkvLFF6ibMDZjXtxCxb/lm9AJ/T7auFwP82c/TLTJIiSNxvfkg==}
+    peerDependencies:
+      vue: '>=3.0.1'
+
   magic-string-ast@0.6.1:
     resolution: {integrity: sha512-eczKQUDaBpB/mcEqZZNGEUG1FQNsXCuk3uOrCpu6y7qTygIy6jnpqDa62j9MGKSoqlXhM1lCFQv1THuGDQtvUA==}
     engines: {node: '>=16.14.0'}
@@ -6171,7 +6182,7 @@ snapshots:
       debug: 4.3.5
       kolorist: 1.8.0
       local-pkg: 0.5.0
-      mlly: 1.7.0
+      mlly: 1.7.1
     transitivePeerDependencies:
       - supports-color
 
@@ -6180,7 +6191,7 @@ snapshots:
       '@iconify/types': 2.0.0
       vue: 3.4.27(typescript@5.4.5)
 
-  '@internationalized/date@3.5.4':
+  '@internationalized/date@3.5.6':
     dependencies:
       '@swc/helpers': 0.5.11
 
@@ -7441,7 +7452,7 @@ snapshots:
       colorette: 2.0.20
       consola: 3.2.3
       fast-glob: 3.3.2
-      magic-string: 0.30.10
+      magic-string: 0.30.11
       pathe: 1.1.2
       perfect-debounce: 1.0.0
     transitivePeerDependencies:
@@ -7472,7 +7483,7 @@ snapshots:
       '@unocss/rule-utils': 0.60.4
       css-tree: 2.3.1
       fast-glob: 3.3.2
-      magic-string: 0.30.10
+      magic-string: 0.30.11
       postcss: 8.4.38
 
   '@unocss/preset-attributify@0.60.4':
@@ -7525,7 +7536,7 @@ snapshots:
   '@unocss/rule-utils@0.60.4':
     dependencies:
       '@unocss/core': 0.60.4
-      magic-string: 0.30.10
+      magic-string: 0.30.11
 
   '@unocss/scope@0.60.4': {}
 
@@ -7567,7 +7578,7 @@ snapshots:
       '@unocss/transformer-directives': 0.60.4
       chokidar: 3.6.0
       fast-glob: 3.3.2
-      magic-string: 0.30.10
+      magic-string: 0.30.11
       vite: 5.2.12(@types/node@20.13.0)(sass@1.77.4)(terser@5.31.0)
     transitivePeerDependencies:
       - rollup
@@ -9762,6 +9773,10 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
+  lucide-vue-next@0.456.0(vue@3.4.27(typescript@5.4.5)):
+    dependencies:
+      vue: 3.4.27(typescript@5.4.5)
+
   magic-string-ast@0.6.1:
     dependencies:
       magic-string: 0.30.10
@@ -10937,7 +10952,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.6.5
       '@floating-ui/vue': 1.0.6(vue@3.4.27(typescript@5.4.5))
-      '@internationalized/date': 3.5.4
+      '@internationalized/date': 3.5.6
       '@internationalized/number': 3.5.3
       '@tanstack/vue-virtual': 3.5.0(vue@3.4.27(typescript@5.4.5))
       '@vueuse/core': 10.10.0(vue@3.4.27(typescript@5.4.5))
@@ -11702,7 +11717,7 @@ snapshots:
     dependencies:
       '@antfu/utils': 0.7.8
       defu: 6.1.4
-      jiti: 1.21.0
+      jiti: 1.21.6
 
   uncrypto@0.1.3: {}
 
